@@ -41,7 +41,7 @@ function App() {
             </Route>
           </Switch>
         </main>
-        <footer className="bottom">gif giver</footer>
+        <footer className="bottom">gif giver: the gift of giving gifs</footer>
       </>
     </Router>
   );

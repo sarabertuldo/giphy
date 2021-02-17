@@ -1,3 +1,14 @@
 .gif-area {
   display: block;
 }
+
+button {
+  border-radius: 5px;
+  border-color: white;
+  margin-top: 5px;
+  margin-left: 80px;
+}
+
+.search-area {
+  padding: 5px;
+}

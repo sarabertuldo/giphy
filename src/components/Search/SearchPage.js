@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import GifDisplay from "../Gif/GifDisplay";
+import "./SearchPage.css";
 
 // State - query, limit, rating, gifs (pieces of data user is entering in)
 // Props - username??
@@ -34,7 +36,7 @@ const SearchPage = (props) => {
   return (
     <>
       <h1>Search</h1>
-      <div className="form-container">
+      <div className="search-area">
         <label htmlFor="query">Search</label>
         <input
           type="text"
@@ -45,7 +47,7 @@ const SearchPage = (props) => {
           onChange={(e) => setQuery(e.target.value)}
         />
       </div>
-      <div className="form-container">
+      <div className="search-area">
         <label htmlFor="rating">Rating </label>
         <select
           id="rating"
@@ -58,7 +60,7 @@ const SearchPage = (props) => {
           <option value="r">R</option>
         </select>
       </div>
-      <div className="form-container">
+      <div className="search-area">
         <label htmlFor="limit">Limit</label>
         <select
           id="limit"
@@ -69,11 +71,13 @@ const SearchPage = (props) => {
           <option value="25">25</option>
           <option value="50">50</option>
         </select>
-        <button onClick={() => getGifs(query, rating, limit)}>Search</button>
+        <button class="button" onClick={() => getGifs(query, rating, limit)}>
+          Search
+        </button>
         <div class="gif-area">
           {error.length > 0 && <h1>{error}</h1>}
           {error.length === 0 &&
-            gifs.map((v) => <img key={v.id} src={v.url} />)}
+            gifs.map((v) => <GifDisplay key={v.id} gif={v} />)}
         </div>
       </div>
     </>
